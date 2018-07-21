@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{name}}:Albums</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="albums?.length > 0">
+    <ion-list *ngFor = "let a of albums">
+        <ion-item>
+          <ion-thumbnail item-start *ngIf="a.images?.length > 0">
+              <img src="{{a.images[0].url}}">
+              <span>Type:{{a.type}}</span>
+          </ion-thumbnail>
+          <h1>Album : {{a.name}}</h1>
+          <button ion-button color = "secondary" clear item-end>Details</button>
+        </ion-item>
+    </ion-list>
+  </div>  
+</ion-content>
